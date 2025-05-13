@@ -1,0 +1,42 @@
+{
+    "name": "cloud-castle/sql-builder",
+    "description": "Sqlbuilder library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CloudCastle\\SqlBuilder\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CloudCastle\\SqlBuilder\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Алексей Зорин",
+            "email": "zorinalexey59292@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.3",
+        "ext-mbstring": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0"
+    },
+    "scripts": {
+        "doc-gen": "php ./tools/phpDocumentor.phar run",
+        "unit-test": "phpunit",
+        "phpstan-analyse": "php ./tools/phpstan.phar analyse"
+    },
+    "config": {
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.3"
+        }
+    }
+}
