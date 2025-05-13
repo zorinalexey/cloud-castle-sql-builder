@@ -66,8 +66,8 @@ $deleteQuery = $queryBuilder->delete('users')
 
 #### JOIN Operations
 ```php
-$query = $queryBuilder->select('users')
-    ->join('orders', 'left')
+$select = $queryBuilder->select('users');
+$join = $select->join('orders', 'left')
     ->on('users.id', '=', 'orders.user_id')
     ->columns(['users.*', 'orders.total']);
 ```
@@ -89,8 +89,8 @@ $query = $queryBuilder->select('users')
 
 #### CASE Statements
 ```php
-$query = $queryBuilder->select('orders')
-    ->case('status_label')
+$select = $queryBuilder->select('orders');
+$case = $select->case('status_label')
     ->when('status', '=', 'pending', 'Pending')
     ->when('status', '=', 'completed', 'Completed')
     ->else('Unknown');
