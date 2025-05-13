@@ -1,4 +1,4 @@
-# CloudCastle Database Manager
+# CloudCastle SQL Builder
 
 A powerful and flexible SQL query builder library for PHP that provides a fluent interface for building complex database queries.
 
@@ -24,7 +24,7 @@ A powerful and flexible SQL query builder library for PHP that provides a fluent
 ## Installation
 
 ```bash
-composer require cloudcastle/database-manager
+composer require cloud-castle/sql-builder
 ```
 
 ## Usage
