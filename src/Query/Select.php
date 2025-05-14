@@ -18,24 +18,24 @@ use CloudCastle\SqlBuilder\Interfaces\Query\SelectInterface;
 final class Select extends Conditions implements SelectInterface
 {
     /**
-     * @var array|string[]
+     * @var array<string>
      */
     private array $columns = [];
     
     /**
-     * @var array|string[]
+     * @var array<string>
      */
     private array $distinct = [];
     
     /**
-     * @var Join[]|array
+     * @var array<Join>
      */
     private array $joins = [];
     
     /**
      * Задать колонки для выборки данных
      *
-     * @param string|array<string>|BuilderInterface $columns Колонки(колонка) или под запрос для получения в выборки
+     * @param string|array<string>|BuilderInterface $columns Колонки (колонка) или под запрос для получения в выборки
      *
      * @return $this
      */
@@ -46,7 +46,7 @@ final class Select extends Conditions implements SelectInterface
             $columns = $columns->toSql();
         }
         
-        if (!is_array($columns)) {
+        if (is_string($columns)) {
             $columns = [$columns];
         }
         
