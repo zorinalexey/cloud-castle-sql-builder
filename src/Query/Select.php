@@ -42,10 +42,7 @@ final class Select extends Conditions implements SelectInterface
     public function columns (array|string|BuilderInterface $columns = '*'): static
     {
         if ($columns instanceof BuilderInterface) {
-            $this->binds = [
-                ...$this->binds,
-                $columns->getBinds(),
-            ];
+            $this->binds = [...$this->binds, ...$columns->getBinds(),];
             $columns = $columns->toSql();
         }
         

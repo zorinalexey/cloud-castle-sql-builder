@@ -9,6 +9,7 @@ use CloudCastle\SqlBuilder\Interfaces\BuilderInterface;
 use CloudCastle\SqlBuilder\Traits\GetBindNameTrait;
 use CloudCastle\SqlBuilder\Traits\TableAliasTrait;
 use DateTimeInterface;
+use Stringable;
 
 /**
  * Абстрактный класс предоставляет основные методы для преобразования объектов в SQL-запрос
@@ -28,7 +29,7 @@ abstract class Builder implements BuilderInterface
     /**
      * Массив заполнителей
      *
-     * @var array<mixed>
+     * @var array<string, string|int|float|null>
      */
     protected array $binds = [];
     
@@ -59,7 +60,7 @@ abstract class Builder implements BuilderInterface
         $sql = $this->toSql();
         
         foreach (array_reverse($this->binds) as $key => $value) {
-            /** @var string $value */
+            /** @var int|string $value */
             $sql = str_replace($key, "'$value'", $sql);
         }
         
@@ -69,7 +70,7 @@ abstract class Builder implements BuilderInterface
     /**
      * Получить массив биндов(заполнителей)
      *
-     * @return array<string>
+     * @return array<string, float|int|string|null>
      */
     final public function getBinds (): array
     {

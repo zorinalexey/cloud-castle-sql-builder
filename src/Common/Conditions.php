@@ -86,23 +86,17 @@ abstract class Conditions extends Builder implements ConditionInterface
      * Добавить в запрос сырую часть запроса
      *
      * @param string|BuilderInterface $query Тело запроса
-     * @param array<string|int|float|bool|object> $binds Массив биндов
+     * @param array<string, string|int|float|null> $binds Массив биндов
      * @return $this
      */
     final public function raw (string|BuilderInterface $query, array $binds = []): static
     {
         if ($query instanceof BuilderInterface) {
-            $binds = [
-                ...$binds,
-                ...$query->getBinds(),
-            ];
+            $binds = [...$binds, ...$query->getBinds(),];
             $query = "(\n\t{$query}\n\t)";
         }
         
-        $this->binds = [
-            ...$this->binds,
-            ...$binds,
-        ];
+        $this->binds = [...$this->binds, ...$binds,];
         $this->conditions[] = $query;
         
         return $this;
