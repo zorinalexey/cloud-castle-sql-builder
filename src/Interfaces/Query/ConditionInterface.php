@@ -103,54 +103,79 @@ interface ConditionInterface
     /**
      * Добавить условие BETWEEN (Диапазон значений)
      *
-     * @param string|BuilderInterface $column Наименование
-     *                                           колонки
-     * @param mixed $start Старт
-     *                        вхождения
-     * @param mixed $end Конец
-     *                      вхождений
-     * @param bool $not Отрицание
-     *                     вхождения
-     * @param string $prefix Условный
-     *                          префих для
-     *                          составления
-     *                          запроса
-     *                          (AND|OR)
+     * @param string|BuilderInterface $column Наименование колонки
+     * @param mixed $start Старт вхождения
+     * @param mixed $end Конец вхождений
+     * @param bool $not Отрицание вхождения
+     * @param string $prefix Условный префих для составления запроса (AND|OR)
+     *
      * @return $this
      */
     public function between (string|BuilderInterface $column, mixed $start, mixed $end, bool $not = false, string $prefix = 'AND'): static;
     
     /**
+     * @param string|BuilderInterface $column
+     * @param string|Stringable|BuilderInterface $query
+     * @param string $operator
+     * @param string $prefix
+     *
      * @return $this
      */
     public function all (string|BuilderInterface $column, string|Stringable|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static;
     
     /**
+     * @param string|BuilderInterface $column
+     * @param string|Stringable|BuilderInterface $query
+     * @param string $operator
+     * @param string $prefix
+     *
      * @return $this
      */
     public function any (string|BuilderInterface $column, string|Stringable|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static;
     
     /**
+     * @param string|BuilderInterface $query
+     * @param bool $not
+     *
      * @return $this
      */
     public function exists (string|BuilderInterface $query, bool $not = false): static;
     
     /**
+     * @param string|BuilderInterface $column
+     * @param string|BuilderInterface $query
+     * @param string $operator
+     * @param string $prefix
+     *
      * @return $this
      */
     public function some (string|BuilderInterface $column, string|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static;
     
     /**
+     * Объединить с подзапросом
+     *
+     * @param string|BuilderInterface $query Подзапрос
+     * @param bool $all Тип объединения ALL
+     *
      * @return $this
      */
     public function union (string|BuilderInterface $query, bool $all = false): static;
     
     /**
+     * Задать группировку по колонке
+     *
+     * @param string $column Наименование колонки
+     *
      * @return $this
      */
     public function groupBy (string $column): static;
     
     /**
+     * Задать сортировку по колонке
+     *
+     * @param string $column Наименование колонки
+     * @param string $direction Направление сортировки
+     *
      * @return $this
      */
     public function orderBy (string $column, string $direction = 'ASC'): static;
@@ -169,5 +194,19 @@ interface ConditionInterface
      */
     public function offset (int $offset): static;
     
+    /**
+     * @param string $column Наименование колонки
+     *
+     * @return HavingInterface
+     */
     public function having (string $column): HavingInterface;
+    
+    /**
+     * Использовать как подзапрос
+     *
+     * @param string $name Наименование подзапроса
+     *
+     * @return $this
+     */
+    public function asSubquery (string $name): static;
 }

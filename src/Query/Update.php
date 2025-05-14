@@ -26,6 +26,10 @@ final class Update extends Conditions implements UpdateInterface
             $sql .= $conditions['with'] . "\n";
         }
         
+        if($this->subQuery){
+            $sql .= "(";
+        }
+        
         $sql .= "UPDATE\n\t{$this->table}\nSET\n";
         
         $i = 1;
@@ -44,6 +48,10 @@ final class Update extends Conditions implements UpdateInterface
         }
         
         $sql .= ($conditions['where'] ?? '');
+        
+        if($this->subQuery){
+            $sql .= ") AS {$this->subQuery}";
+        }
         
         return $sql;
     }

@@ -22,10 +22,16 @@ final class Delete extends Conditions implements DeleteInterface
             $sql .= $conditions['with'] . "\n";
         }
         
-        $sql .= /**
-         * @lang text
-         */
+        if($this->subQuery){
+            $sql .= '(';
+        }
+        
+        $sql .= /** @lang text */
             "DELETE FROM {$this->table}\n" . ($conditions['where'] ?? '');
+        
+        if($this->subQuery){
+            $sql .= ") AS {$this->subQuery}";
+        }
         
         return $sql;
     }

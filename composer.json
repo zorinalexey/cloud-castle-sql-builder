@@ -28,7 +28,7 @@
         "phpunit/phpunit": "^10.0"
     },
     "scripts": {
-        "doc-gen": "php ./tools/phpDocumentor.phar run",
+        "documentation-generate": "php ./tools/phpDocumentor.phar run",
         "unit-test": "phpunit",
         "phpstan-analyse": "php ./tools/phpstan.phar analyse"
     },

@@ -7,6 +7,7 @@ namespace CloudCastle\SqlBuilder\Common;
 use CloudCastle\SqlBuilder\Interfaces\BuilderInterface;
 use CloudCastle\SqlBuilder\Interfaces\Query\ConditionInterface;
 use CloudCastle\SqlBuilder\Interfaces\Query\HavingInterface;
+use CloudCastle\SqlBuilder\Traits\AsSubqueryTrait;
 use CloudCastle\SqlBuilder\Traits\GetOperatorTrait;
 use CloudCastle\SqlBuilder\Traits\GetPrefixTrait;
 use Stringable;
@@ -18,6 +19,7 @@ abstract class Conditions extends Builder implements ConditionInterface
 {
     use GetOperatorTrait;
     use GetPrefixTrait;
+    use AsSubqueryTrait;
     
     /**
      * @var array<string>
@@ -261,7 +263,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      */
     final public function like (string $column, string $value, bool $not = false, string $prefix = 'AND'): static
     {
-        $bind = $this->getBindName($value, $column);
+        $bind = $this->getBindName(mb_strtoupper($value), $column);
         
         if (is_array($bind)) {
             $bind = implode(", ", $bind);
@@ -269,7 +271,7 @@ abstract class Conditions extends Builder implements ConditionInterface
         
         $suffix = $not === false ? ' ' : ' NOT ';
         $prefix = $this->getPrefix($prefix);
-        $this->conditions[] = "{$prefix} ({$column}{$suffix}LIKE {$bind})";
+        $this->conditions[] = "{$prefix} (UPPER({$column}){$suffix}LIKE {$bind})";
         
         return $this;
     }

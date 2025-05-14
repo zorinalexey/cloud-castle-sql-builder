@@ -29,25 +29,28 @@ trait GetBindNameTrait
             
             foreach ($value as $key => $item) {
                 $bindName = $name ? "{$name}_{$key}" : null;
-                $nestedNames = $this->getBindName($item, $bindName);
                 
-                if (is_array($nestedNames)) {
-                    $names = array_merge($names, $nestedNames);
-                } else {
-                    $names[] = $nestedNames;
+                if (is_array($item)) {
+                    $item = json_encode($item);
                 }
+                
+                /** @var string $item */
+                $names[] = $this->getBindName($item, $bindName);
             }
             
-            return array_filter($names);
+            /** @var array<int, string> $names */
+            return $names;
         }
         
         if ($value instanceof DateTimeInterface) {
             $value = $value->format('Y-m-d H:i:s');
         } elseif ($value instanceof BuilderInterface) {
+            $this->binds = [...$this->binds, ...$value->getBinds()];
+            
             return '('.$value->toSql().')';
         } elseif (is_bool($value)) {
             $value = $value ? 1 : 0;
-        } elseif (is_object($value) || is_array($value)) {
+        } elseif (is_object($value)) {
             $value = serialize($value);
         }
         

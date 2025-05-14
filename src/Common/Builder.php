@@ -59,6 +59,7 @@ abstract class Builder implements BuilderInterface
         $sql = $this->toSql();
         
         foreach (array_reverse($this->binds) as $key => $value) {
+            /** @var string $value */
             $sql = str_replace($key, "'$value'", $sql);
         }
         

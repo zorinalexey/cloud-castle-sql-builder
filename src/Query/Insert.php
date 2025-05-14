@@ -4,12 +4,15 @@ namespace CloudCastle\SqlBuilder\Query;
 
 use CloudCastle\SqlBuilder\Common\Builder;
 use CloudCastle\SqlBuilder\Interfaces\Query\InsertInterface;
+use CloudCastle\SqlBuilder\Traits\AsSubqueryTrait;
 
 /**
  * Класс для генерации запроса на добавление данных в таблицу
  */
 final class Insert extends Builder implements InsertInterface
 {
+    use AsSubqueryTrait;
+    
     /**
      * @var array<array<mixed>>
      */
@@ -35,9 +38,17 @@ final class Insert extends Builder implements InsertInterface
             $values[] = '(' . implode(', ', $item) . ')';
         }
         
-        $sql = /** @lang TEXT */
-            "INSERT INTO {$this->table} (" . implode(', ', $columns) . ") VALUES\n\t";
-        $sql .= implode(",\n\t", $values);
+        $sql = '';
+        
+        if($this->subQuery){
+            $sql .= '(';
+        }
+        
+        $sql .= /** @lang TEXT */ "INSERT INTO {$this->table} (" . implode(', ', $columns) . ") VALUES\n\t". implode(",\n\t", $values);
+        
+        if($this->subQuery){
+            $sql .= ") AS {$this->subQuery}";
+        }
         
         return $sql;
     }

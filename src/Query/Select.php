@@ -72,6 +72,10 @@ final class Select extends Conditions implements SelectInterface
             $sql .= $conditions['with'];
         }
         
+        if($this->subQuery){
+            $sql .= "(";
+        }
+        
         $sql .= "SELECT\n\t";
         
         if ($this->distinct) {
@@ -101,6 +105,10 @@ final class Select extends Conditions implements SelectInterface
         }
         
         $sql .= ($conditions['where'] ?? '');
+        
+        if($this->subQuery){
+            $sql .= ") AS {$this->subQuery}";
+        }
         
         return $sql;
     }
