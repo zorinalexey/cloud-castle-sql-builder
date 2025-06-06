@@ -19,7 +19,7 @@ trait AsSubqueryTrait
      *
      * @param string $name Наименование подзапроса
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function asSubquery (string $name): static
     {

@@ -44,7 +44,7 @@ final class Join extends Builder implements JoinInterface
     /**
      * @param string $type
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function type (string $type = 'left'): static
     {
@@ -74,7 +74,7 @@ final class Join extends Builder implements JoinInterface
      * @param mixed $value
      * @param string $operator
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function on (string $field, mixed $value, string $operator = '='): static
     {
@@ -89,7 +89,7 @@ final class Join extends Builder implements JoinInterface
      * @param mixed|null $value
      * @param string $operator
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function and (string $column, mixed $value = null, string $operator = '='): static
     {
@@ -104,7 +104,7 @@ final class Join extends Builder implements JoinInterface
      * @param mixed|null $value
      * @param string $operator
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function or (string $column, mixed $value = null, string $operator = '='): static
     {

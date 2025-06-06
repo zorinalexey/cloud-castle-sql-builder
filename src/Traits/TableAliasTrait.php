@@ -18,7 +18,7 @@ trait TableAliasTrait
      * Задать псевдоним
      *
      * @param string $alias Псевдоним
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function alias (string $alias): static
     {

@@ -10,27 +10,27 @@ namespace CloudCastle\SqlBuilder\Interfaces\Query;
 interface HavingInterface
 {
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function column (string $column): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function min (int $value, string $operator = '=', string $prefix = 'AND'): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function max (int $value, string $operator = '=', string $prefix = 'AND'): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function avg (int $value, string $operator = '=', string $prefix = 'AND'): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function sum (int $value, string $operator = '=', string $prefix = 'AND'): static;
 }

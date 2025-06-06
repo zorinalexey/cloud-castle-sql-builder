@@ -30,7 +30,7 @@ final class Having extends Builder implements HavingInterface
      *
      * @param string $column
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function column (string $column): static
     {
@@ -46,7 +46,7 @@ final class Having extends Builder implements HavingInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function min (int $value, string $operator = '=', string $prefix = 'AND'): static
     {
@@ -63,7 +63,7 @@ final class Having extends Builder implements HavingInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function max (int $value, string $operator = '=', string $prefix = 'AND'): static
     {
@@ -80,7 +80,7 @@ final class Having extends Builder implements HavingInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function avg (int $value, string $operator = '=', string $prefix = 'AND'): static
     {
@@ -97,7 +97,7 @@ final class Having extends Builder implements HavingInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function sum (int $value, string $operator = '=', string $prefix = 'AND'): static
     {

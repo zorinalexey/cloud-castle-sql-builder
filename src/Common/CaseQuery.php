@@ -27,7 +27,7 @@ final class CaseQuery extends Builder implements CaseInterface
      * @param string $condition Условие
      * @param string|int|bool|float $result Результат
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function when (string $condition, string|int|bool|float $result): static
     {
@@ -45,7 +45,7 @@ final class CaseQuery extends Builder implements CaseInterface
      *
      * @param string|int|bool|float $result Результат
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function else (string|int|bool|float $result): static
     {

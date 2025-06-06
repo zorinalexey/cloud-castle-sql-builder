@@ -32,7 +32,7 @@ final class Procedure extends AbstractSchema implements ProcedureInterface
      * Метод установки драйвера объекта запроса
      *
      * @param DriverEnum $driver
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function driver (DriverEnum $driver): self
     {
@@ -70,7 +70,7 @@ final class Procedure extends AbstractSchema implements ProcedureInterface
      * Задать наименование процедуры для дальнейшей вызова метода генерации запроса
      *
      * @param string $procedureName Наименование хранимой процедуры
-     * @return $this
+     * @return $this Текущий объект класса
      * @throws InvalidArgumentException
      */
     public function name (string $procedureName): self

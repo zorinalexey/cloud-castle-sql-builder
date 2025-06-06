@@ -10,17 +10,17 @@ namespace CloudCastle\SqlBuilder\Interfaces\Query;
 interface CaseInterface
 {
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function when (string $condition, string|int|bool|float $result): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function else (string|int|bool|float $result): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function alias (string $alias): static;
 }

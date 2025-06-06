@@ -16,7 +16,7 @@ interface InsertInterface extends BuilderInterface
      *
      * @param object|array<mixed> $values Значения
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function values (array|object $values): static;
 }

@@ -56,7 +56,7 @@ final class Insert extends Builder implements InsertInterface
     /**
      * @param object|array<string> $values
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function values (object|array $values): static
     {

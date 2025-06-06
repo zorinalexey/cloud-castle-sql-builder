@@ -37,7 +37,7 @@ final class Select extends Conditions implements SelectInterface
      *
      * @param string|array<string>|BuilderInterface $columns Колонки (колонка) или под запрос для получения в выборки
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function columns (array|string|BuilderInterface $columns = '*'): static
     {
@@ -116,7 +116,7 @@ final class Select extends Conditions implements SelectInterface
      * @param string $column Наименование колонки
      * @param string|null $alias Псевдоним колонки
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function min (string $column, ?string $alias = null): static
     {
@@ -138,7 +138,7 @@ final class Select extends Conditions implements SelectInterface
      * @param string $column Наименование колонки
      * @param string|null $alias Псевдоним колонки
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function max (string $column, ?string $alias = null): static
     {
@@ -160,7 +160,7 @@ final class Select extends Conditions implements SelectInterface
      * @param string $column Наименование колонки
      * @param string|null $alias Псевдоним колонки
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function avg (string $column, ?string $alias = null): static
     {
@@ -182,7 +182,7 @@ final class Select extends Conditions implements SelectInterface
      * @param string $column Наименование колонки
      * @param string|null $alias Псевдоним колонки
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function sum (string $column, ?string $alias = null): static
     {
@@ -234,7 +234,7 @@ final class Select extends Conditions implements SelectInterface
      *
      * @param array<string>|string $columns Наименование колонки (колонок)
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function distinct (array|string $columns = 'id'): static
     {

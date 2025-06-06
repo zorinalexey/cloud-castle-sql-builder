@@ -12,22 +12,22 @@ use CloudCastle\SqlBuilder\Interfaces\BuilderInterface;
 interface JoinInterface extends BuilderInterface
 {
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function on (string $field, mixed $value, string $operator = '='): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function and (string $column, mixed $value = null, string $operator = '='): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function or (string $column, mixed $value = null, string $operator = '='): static;
     
     /**
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function type (string $type = 'left'): static;
 }

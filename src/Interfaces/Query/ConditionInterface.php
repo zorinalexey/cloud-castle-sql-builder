@@ -18,7 +18,7 @@ interface ConditionInterface
      * @param string $name Наименование условной функции
      * @param string|BuilderInterface $query тело функции
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function with (string $name, string|BuilderInterface $query): static;
     
@@ -28,7 +28,7 @@ interface ConditionInterface
      * @param string|BuilderInterface $query Тело запроса
      * @param array<mixed> $binds Массив биндов
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function raw (string|BuilderInterface $query, array $binds = []): static;
     
@@ -39,7 +39,7 @@ interface ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function where (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static;
     
@@ -50,7 +50,7 @@ interface ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function orWhere (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static;
     
@@ -61,7 +61,7 @@ interface ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function and (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static;
     
@@ -72,7 +72,7 @@ interface ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function or (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static;
     
@@ -84,7 +84,7 @@ interface ConditionInterface
      * @param bool $not отрицание вхождения
      * @param string $prefix Условный префих для составления запроса (AND|OR)
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function in (string|BuilderInterface $column, object|array $values, bool $not = false, string $prefix = 'AND'): static;
     
@@ -96,7 +96,7 @@ interface ConditionInterface
      * @param bool $not Отрицание вхождения
      * @param string $prefix Условный префих для составления запроса (AND|OR)
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function like (string $column, string $value, bool $not = false, string $prefix = 'AND'): static;
     
@@ -109,7 +109,7 @@ interface ConditionInterface
      * @param bool $not Отрицание вхождения
      * @param string $prefix Условный префих для составления запроса (AND|OR)
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function between (string|BuilderInterface $column, mixed $start, mixed $end, bool $not = false, string $prefix = 'AND'): static;
     
@@ -119,7 +119,7 @@ interface ConditionInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function all (string|BuilderInterface $column, string|Stringable|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static;
     
@@ -129,7 +129,7 @@ interface ConditionInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function any (string|BuilderInterface $column, string|Stringable|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static;
     
@@ -137,7 +137,7 @@ interface ConditionInterface
      * @param string|BuilderInterface $query
      * @param bool $not
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function exists (string|BuilderInterface $query, bool $not = false): static;
     
@@ -147,7 +147,7 @@ interface ConditionInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function some (string|BuilderInterface $column, string|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static;
     
@@ -157,7 +157,7 @@ interface ConditionInterface
      * @param string|BuilderInterface $query Подзапрос
      * @param bool $all Тип объединения ALL
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function union (string|BuilderInterface $query, bool $all = false): static;
     
@@ -166,7 +166,7 @@ interface ConditionInterface
      *
      * @param string $column Наименование колонки
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function groupBy (string $column): static;
     
@@ -176,21 +176,21 @@ interface ConditionInterface
      * @param string $column Наименование колонки
      * @param string $direction Направление сортировки
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function orderBy (string $column, string $direction = 'ASC'): static;
     
     /**
      * Задать лимит строк в выборке
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function limit (int $limit): static;
     
     /**
      * Пропустить заданное количество строк
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function offset (int $offset): static;
     
@@ -206,7 +206,7 @@ interface ConditionInterface
      *
      * @param string $name Наименование подзапроса
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function asSubquery (string $name): static;
 }

@@ -9,7 +9,6 @@ use CloudCastle\SqlBuilder\Interfaces\BuilderInterface;
 use CloudCastle\SqlBuilder\Traits\GetBindNameTrait;
 use CloudCastle\SqlBuilder\Traits\TableAliasTrait;
 use DateTimeInterface;
-use Stringable;
 
 /**
  * Абстрактный класс предоставляет основные методы для преобразования объектов в SQL-запрос
@@ -82,7 +81,7 @@ abstract class Builder implements BuilderInterface
      *
      * @param string $tableName
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function table (string $tableName): static
     {

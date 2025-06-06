@@ -17,7 +17,7 @@ interface UpdateInterface extends BuilderInterface, ConditionInterface
      *
      * @param object|array<mixed> $values Значения
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function set (array|object $values): static;
 }

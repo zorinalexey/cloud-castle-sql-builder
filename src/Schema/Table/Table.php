@@ -68,7 +68,7 @@ final class Table extends AbstractSchema implements TableInterface
      * Задать наименование таблицы для дальнейшей вызова метода генерации запроса
      *
      * @param string $tableName Наименование таблицы
-     * @return $this
+     * @return $this Текущий объект класса
      * @throws InvalidArgumentException
      */
     public function name (string $tableName): self
@@ -113,7 +113,7 @@ final class Table extends AbstractSchema implements TableInterface
      * Метод установки драйвера объекта запроса
      *
      * @param DriverEnum $driver Драйвер типа БД
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function driver (DriverEnum $driver): self
     {

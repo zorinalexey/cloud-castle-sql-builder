@@ -42,7 +42,7 @@ interface BuilderInterface
      *
      * @param string $tableName наименование таблицы
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function table (string $tableName): static;
 }

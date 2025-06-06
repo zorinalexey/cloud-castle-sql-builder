@@ -61,7 +61,7 @@ final class Update extends Conditions implements UpdateInterface
      *
      * @param object|array<mixed> $values Значения
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     public function set (object|array $values): static
     {

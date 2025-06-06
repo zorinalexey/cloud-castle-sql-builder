@@ -66,7 +66,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      *
      * @param string $name Наименование условной функции
      * @param string|BuilderInterface $query Тело функции
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function with (string $name, string|BuilderInterface $query): static
     {
@@ -87,7 +87,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      *
      * @param string|BuilderInterface $query Тело запроса
      * @param array<string, string|int|float|null> $binds Массив биндов
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function raw (string|BuilderInterface $query, array $binds = []): static
     {
@@ -109,7 +109,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function where (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static
     {
@@ -135,7 +135,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function orWhere (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static
     {
@@ -167,7 +167,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function and (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static
     {
@@ -195,7 +195,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param mixed|null $value значение
      * @param string $operator оператор
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function or (string|BuilderInterface $column, mixed $value = null, string $operator = '='): static
     {
@@ -223,7 +223,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param bool $not отрицание вхождения
      * @param string $prefix Условный префих для составления запроса (AND|OR)
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function in (string|BuilderInterface $column, object|array $values, bool $not = false, string $prefix = 'AND'): static
     {
@@ -253,7 +253,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param bool $not Отрицание вхождения
      * @param string $prefix Условный префих для составления запроса (AND|OR)
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function like (string $column, string $value, bool $not = false, string $prefix = 'AND'): static
     {
@@ -279,7 +279,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param bool $not Отрицание вхождения
      * @param string $prefix Условный префих для составления запроса (AND|OR)
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function between (string|BuilderInterface $column, mixed $start, mixed $end, bool $not = false, string $prefix = 'AND'): static
     {
@@ -322,7 +322,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function all (string|BuilderInterface $column, Stringable|string|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static
     {
@@ -383,7 +383,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function any (string|BuilderInterface $column, Stringable|string|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static
     {
@@ -402,7 +402,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param string|BuilderInterface $query
      * @param bool $not
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function exists (string|BuilderInterface $query, bool $not = false): static
     {
@@ -425,7 +425,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param string $operator
      * @param string $prefix
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function some (string|BuilderInterface $column, string|BuilderInterface $query, string $operator = '=', string $prefix = 'AND'): static
     {
@@ -444,7 +444,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param string|BuilderInterface $query
      * @param bool $all
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function union (string|BuilderInterface $query, bool $all = false): static
     {
@@ -468,7 +468,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      *
      * @param string $column Колонка
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function groupBy (string $column): static
     {
@@ -484,7 +484,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      * @param string $column Колонка
      * @param string $direction Направление сортировки ASC - по возрастанию, DESC - по уменьшению
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function orderBy (string $column, string $direction = 'ASC'): static
     {
@@ -505,7 +505,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      *
      * @param int $limit Лимит
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function limit (int $limit): static
     {
@@ -519,7 +519,7 @@ abstract class Conditions extends Builder implements ConditionInterface
      *
      * @param int $offset Пропустить
      *
-     * @return $this
+     * @return $this Текущий объект класса
      */
     final public function offset (int $offset): static
     {
