@@ -4,12 +4,35 @@ declare(strict_types=1);
 
 namespace CloudCastle\SqlBuilder\Interfaces;
 
-use CloudCastle\SqlBuilder\Interfaces\Schema\DropTableInterface;
-use CloudCastle\SqlBuilder\Interfaces\Schema\TableActionsInterface;
+use CloudCastle\SqlBuilder\Enums\DriverEnum;
+use CloudCastle\SqlBuilder\Interfaces\Schema\Procedure\ProcedureInterface;
+use CloudCastle\SqlBuilder\Interfaces\Schema\Table\TableInterface;
 
+/**
+ * Интерфейс определяет методы для управления таблицами и хранимыми процедурами
+ */
 interface SchemaBuilderInterface
 {
-    public function table(string $tableName): TableActionsInterface;
+    /**
+     * Конструктор класса
+     *
+     * @param DriverEnum $driver Драйвер типа БД
+     */
+    public function __construct (DriverEnum $driver);
     
-    public function drop(string $tableName): DropTableInterface;
+    /**
+     * Метод генерации запросов для создания, изменения и удаления таблиц
+     *
+     * @param string $tableName
+     * @return TableInterface
+     */
+    public function table (string $tableName): TableInterface;
+    
+    /**
+     * Метод генерации запросов для создания, изменения и удаления хранимых процедур
+     *
+     * @param string $procedureName
+     * @return ProcedureInterface
+     */
+    public function procedure (string $procedureName): ProcedureInterface;
 }
