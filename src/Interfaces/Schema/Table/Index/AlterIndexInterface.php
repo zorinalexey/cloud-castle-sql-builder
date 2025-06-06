@@ -4,7 +4,15 @@ declare(strict_types = 1);
 
 namespace CloudCastle\SqlBuilder\Interfaces\Schema\Table\Index;
 
-interface AlterIndexInterface
+use CloudCastle\SqlBuilder\Enums\IndexTypeEnum;
+
+interface AlterIndexInterface extends IndexTableInterface
 {
-    
+    /**
+     * Метод определяет установку типа индекса
+     *
+     * @param IndexTypeEnum $keyType
+     * @return AlterIndexInterface
+     */
+    public function type(IndexTypeEnum $keyType): AlterIndexInterface;
 }

@@ -8,6 +8,9 @@ use CloudCastle\SqlBuilder\Interfaces\Schema\Table\ColumnInterface;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\IndexInterface;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\KeyInterface;
 
+/**
+ * Интерфейс определяет методы модификации таблицы
+ */
 interface CreateTableInterface extends ActionTableInterface
 {
     /**

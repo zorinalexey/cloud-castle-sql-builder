@@ -22,7 +22,7 @@ interface ColumnInterface
     public function create(): CreateColumnInterface;
     
     /**
-     * Метод генерации запроса удаления колонки
+     * Метод генерации запроса создания колонки
      *
      * @return DropColumnInterface Объект генерации запроса удаления колонки
      */
