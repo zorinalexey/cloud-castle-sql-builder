@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace CloudCastle\SqlBuilder\Common\Enums;
+namespace CloudCastle\SqlBuilder\Enums;
 
 enum ReferenceActionEnum: string
 {
