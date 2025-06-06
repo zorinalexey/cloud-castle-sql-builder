@@ -4,3 +4,4 @@ build/
 .phpunit.cache
 composer.lock
 test.php
+logs
