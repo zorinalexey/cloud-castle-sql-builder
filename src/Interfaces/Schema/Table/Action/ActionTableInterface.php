@@ -10,7 +10,7 @@ interface ActionTableInterface
      * Задать наименование таблицы для дальнейшей установки параметров запроса
      *
      * @param string $tableName Наименование таблицы
-     * @return self
+     * @return $this Текущий объект класса
      */
     public function name (string $tableName): self;
 }

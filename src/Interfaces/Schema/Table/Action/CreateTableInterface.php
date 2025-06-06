@@ -4,11 +4,33 @@ declare(strict_types = 1);
 
 namespace CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action;
 
+use CloudCastle\SqlBuilder\Interfaces\Schema\Table\ColumnInterface;
+use CloudCastle\SqlBuilder\Interfaces\Schema\Table\IndexInterface;
+use CloudCastle\SqlBuilder\Interfaces\Schema\Table\KeyInterface;
+
 interface CreateTableInterface extends ActionTableInterface
 {
-    public function column(string $columnName);
+    /**
+     * Метод модификации колонок таблицы
+     *
+     * @param string $columnName Наименование колонки
+     * @return ColumnInterface Объект модификации колонки
+     */
+    public function column(string $columnName): ColumnInterface;
     
-    public function index(string $indexName);
+    /**
+     * Метод модификации индексов таблицы
+     *
+     * @param string $indexName Наименование индекса
+     * @return IndexInterface Объект модификации индекса
+     */
+    public function index(string $indexName): IndexInterface;
     
-    public function key(string $keyName);
+    /**
+     * Метод модификации ключей таблицы
+     *
+     * @param string $keyName Наименование ключа
+     * @return KeyInterface Объект модификации ключа
+     */
+    public function key(string $keyName): KeyInterface;
 }

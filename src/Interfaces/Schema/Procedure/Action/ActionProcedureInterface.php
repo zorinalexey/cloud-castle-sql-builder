@@ -10,7 +10,7 @@ interface ActionProcedureInterface
      * Метод установки наименования хранимой процедуры для дальнейшей работы с ней
      *
      * @param string $name Наименование хранимой процедуры
-     * @return self
+     * @return $this Текущий объект класса
      */
     public function name (string $name): self;
 }

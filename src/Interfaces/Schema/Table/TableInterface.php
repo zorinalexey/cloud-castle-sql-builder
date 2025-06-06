@@ -7,7 +7,6 @@ namespace CloudCastle\SqlBuilder\Interfaces\Schema\Table;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\AlterTableInterface;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\CreateTableInterface;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\DropTableInterface;
-use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\TransactionInterface;
 
 /**
  * Интерфейс определяет методы модификации таблицы БД и управление транзакциями
@@ -36,7 +35,7 @@ interface TableInterface
     public function alter (): AlterTableInterface;
     
     /**
-     * Метод генерации запроса в управляемой транзакции
+     * Метод генерации запроса в управления транзакциями
      *
      * @return TransactionInterface Объект управления транзакциями
      */

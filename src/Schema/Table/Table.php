@@ -9,8 +9,8 @@ use CloudCastle\SqlBuilder\Exceptions\InvalidArgumentException;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\AlterTableInterface;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\CreateTableInterface;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\DropTableInterface;
-use CloudCastle\SqlBuilder\Interfaces\Schema\Table\Action\TransactionInterface;
 use CloudCastle\SqlBuilder\Interfaces\Schema\Table\TableInterface;
+use CloudCastle\SqlBuilder\Interfaces\Schema\Table\TransactionInterface;
 use CloudCastle\SqlBuilder\Schema\AbstractSchema;
 
 /**
