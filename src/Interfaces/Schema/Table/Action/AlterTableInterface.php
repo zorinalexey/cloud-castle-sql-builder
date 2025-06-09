@@ -25,9 +25,9 @@ interface AlterTableInterface extends ActionTableInterface
      * Метод переименования таблицы
      *
      * @param string $newTableName Новое наименование таблицы
-     * @return mixed
+     * @return AlterTableInterface
      */
-    public function rename(string $newTableName);
+    public function rename(string $newTableName): AlterTableInterface;
     
     /**
      * Метод модификации индексов таблицы

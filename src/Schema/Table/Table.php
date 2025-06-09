@@ -48,7 +48,7 @@ final class Table extends AbstractSchema implements TableInterface
     {
         $class = $this->getNameSpace() . '\CreateTable';
         /** @var CreateTableInterface $obj */
-        $obj = new $class();
+        $obj = new $class($this->driver);
         $obj->name($this->name);
         
         return $obj;

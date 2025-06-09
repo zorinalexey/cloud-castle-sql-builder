@@ -77,4 +77,26 @@ final class Validator
 
         return (string) $value;
     }
+    
+    public function validateIndexName (string $indexName)
+    {
+        if (empty($indexName)) {
+            throw new InvalidArgumentException('Index name cannot be empty');
+        }
+        
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $indexName)) {
+            throw new InvalidArgumentException('Invalid index name format');
+        }
+    }
+    
+    public function validateKeyName (string $keyName)
+    {
+        if (empty($keyName)) {
+            throw new InvalidArgumentException('key name cannot be empty');
+        }
+        
+        if (!preg_match('/^[a-zA-Z0-9_]+$/', $keyName)) {
+            throw new InvalidArgumentException('Invalid key name format');
+        }
+    }
 } 
