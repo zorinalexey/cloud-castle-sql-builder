@@ -1,6 +1,6 @@
 <?php
 
-namespace CloudCastle\SqlBuilder\Schema\Table\Drivers\MYSQL;
+namespace CloudCastle\SqlBuilder\Schema\Table\Drivers\SQLITE;
 
 use CloudCastle\SqlBuilder\Schema\Table\Abstracts\AbstractDropTable;
 
@@ -20,10 +20,6 @@ final class DropTable extends AbstractDropTable
         }
         
         $sql .= $this->table;
-        
-        if($this->cascade){
-            $sql .= ' CASCADE';
-        }
         
         return $sql;
     }

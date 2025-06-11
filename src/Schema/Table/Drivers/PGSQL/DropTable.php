@@ -1,6 +1,6 @@
 <?php
 
-namespace CloudCastle\SqlBuilder\Schema\Table\Drivers\MYSQL;
+namespace CloudCastle\SqlBuilder\Schema\Table\Drivers\PGSQL;
 
 use CloudCastle\SqlBuilder\Schema\Table\Abstracts\AbstractDropTable;
 

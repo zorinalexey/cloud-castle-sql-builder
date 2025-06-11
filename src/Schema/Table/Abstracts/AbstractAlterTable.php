@@ -10,7 +10,7 @@ abstract class AbstractAlterTable extends AbstractCreateTable implements AlterTa
     /**
      * @var string|null
      */
-    protected string|null $rename = null;
+    protected string|null $newTableName = null;
     
     /**
      * Метод переименования таблицы
@@ -22,7 +22,7 @@ abstract class AbstractAlterTable extends AbstractCreateTable implements AlterTa
     final public function rename (string $newTableName): self
     {
         $this->validator->validateTableName($newTableName);
-        $this->rename = $newTableName;
+        $this->newTableName = $newTableName;
         
         return $this;
     }

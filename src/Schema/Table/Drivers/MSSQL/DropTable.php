@@ -15,6 +15,12 @@ final class DropTable extends AbstractDropTable
     {
         $sql = '';
         
+        if($this->ifExists){
+            $sql .= "IF OBJECT_ID('{$this->table}', 'U') IS NOT NULL";
+        }
+        
+        $sql .= "BEGIN\n\tDROP TABLE {$this->table};\nEND";
+        
         return $sql;
     }
 }
