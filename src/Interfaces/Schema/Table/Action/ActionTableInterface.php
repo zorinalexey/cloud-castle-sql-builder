@@ -15,5 +15,5 @@ interface ActionTableInterface
      * @param string $tableName Наименование таблицы
      * @return $this Текущий объект класса
      */
-    public function name (string $tableName): self;
+    public function name (string $tableName): mixed;
 }

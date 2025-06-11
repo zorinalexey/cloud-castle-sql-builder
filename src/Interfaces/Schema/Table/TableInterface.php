@@ -25,7 +25,7 @@ interface TableInterface
      *
      * @return DropTableInterface Объект генерации запроса удаления таблицы
      */
-    public function drop (): DropTableInterface;
+    public function drop (): mixed;
     
     /**
      * Метод генерации запроса изменения таблицы

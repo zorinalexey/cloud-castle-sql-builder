@@ -10,6 +10,9 @@ use PHPUnit\Framework\TestCase;
 
 final class BuilderTest extends TestCase
 {
+    /**
+     * @covers Builder
+     */
     public function testQuery(): void
     {
         $builder = new Builder();
@@ -17,6 +20,9 @@ final class BuilderTest extends TestCase
         $this->assertInstanceOf(QueryBuilder::class, $query);
     }
     
+    /**
+     * @covers SchemaBuilder
+     */
     public function testSchema(): void
     {
         $driver = DriverEnum::MYSQL;

@@ -84,11 +84,11 @@ final class Table extends AbstractSchema implements TableInterface
      *
      * @return DropTableInterface Объект генерации запроса удаления таблицы
      */
-    public function drop (): DropTableInterface
+    public function drop (): mixed
     {
         $class = $this->getNameSpace() . '\DropTable';
         /** @var DropTableInterface $obj */
-        $obj = new $class();
+        $obj = new $class($this->driver);
         $obj->name($this->name);
         
         return $obj;
